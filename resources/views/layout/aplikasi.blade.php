@@ -7,12 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         html, body {
-            height: 100%; /* Pastikan html dan body memiliki tinggi penuh */
+            height: 100%;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center; /* Pusatkan konten secara horizontal */
-            align-items: center; /* Pusatkan konten secara vertikal */
+            justify-content: center; 
+            align-items: center; 
             background: #f0f0f0;
             font-family: 'Roboto', sans-serif;
         }
@@ -22,7 +22,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             width: 340px;
-            box-sizing: border-box; /* Pastikan ini diterapkan */
+            box-sizing: border-box; 
             background: linear-gradient(to right, #ffffff, #e6e6e6);
         }
         img {
@@ -36,7 +36,7 @@
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; /* Pastikan ini diterapkan */
+            box-sizing: border-box; 
         }
         .btn-primary {
             background-color: #007bff;
@@ -51,10 +51,10 @@
         .btn-primary:hover {
             background-color: #0056b3;
         }
+
     </style>
 </head>
 <body>
     @yield('konten')
 </body>
-</html>
 </html>
