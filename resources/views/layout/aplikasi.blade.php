@@ -21,10 +21,11 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        input[type="text"], input[type="password"], .btn-primary {
+        input[type="text"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
+            margin-bottom: 10px; /* Menambahkan margin bawah */
             box-sizing: border-box;
         }
         .btn-primary {
@@ -34,6 +35,9 @@
            border-radius: 5px;
            cursor: pointer;
            transition: background-color 0.3s;
+           padding: 12px 20px; /* Menambah padding untuk memperbesar tombol */
+           font-size: 16px; /* Menambah ukuran font */
+           width: auto; /* Atur lebar menjadi auto atau sesuai kebutuhan */
        }
        .btn-primary:hover {
            background-color: #0056b3; /* Warna biru yang lebih gelap */
@@ -44,5 +48,7 @@
 <body>
     @yield('konten')
 </body>
+</html>
+</html>
 </html>
 </html>
