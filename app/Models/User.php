@@ -11,4 +11,6 @@ class User extends Authenticatable
 
     protected $table = 'tb_user';
     protected $primarykey = 'user_id';
+
+    protected $fillabel = ['nama','email','password'];
 }

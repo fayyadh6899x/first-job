@@ -8,34 +8,33 @@ use Illuminate\Support\Facades\Session;
 
 class SessionController extends Controller
 {
-    function index()
+    public function index()
     {
         return view("sesi/index");
     }
 
-    function login(Request $request)
+    public function login(Request $request)
     {
         $request->validate([
+            'nama' => 'required',
             'email' => 'required|email',
             'password' => 'required'
         ], [
+            'nama.required' => 'Nama wajib diisi!',
             'email.required' => 'Masukkan email Anda!',
             'email.email' => 'Masukkan email yang valid!',
             'password.required' => 'Masukkan password Anda!',
         ]);
 
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
+        $credentials = $request->only('nama', 'email', 'password');
 
-        if (Auth::attempt($infologin)) {
-            Session::regenerate();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
             return redirect()->intended('dashboard')->with('status', 'Login berhasil!');
-        } else {
-            return redirect('sesi/login')->withErrors([
-                'email' => 'Email atau password yang Anda masukkan salah.'
-            ])->withInput($request->only('email'));
         }
+
+        return back()->withErrors([
+            'loginError' => 'Nama, email atau password yang Anda masukkan salah.'
+        ])->onlyInput('email', 'nama');
     }
 }

@@ -16,7 +16,7 @@
             background: #f0f0f0;
             font-family: 'Roboto', sans-serif;
         }
-        .form-login {
+        .form-login, .form-register {
             background: white;
             padding: 40px;
             border-radius: 8px;
